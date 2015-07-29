@@ -31,7 +31,7 @@ public class SecretFunction {
  
         System.out.println("\nPrimes under " + limit + ": " + Arrays.toString(primes));
  
-        if (testSecret(primes)) {
+        if (isAdditive(primes)) {
             System.out.println("The function SecretFunction() is an additive function for all prime number under " + limit + ".");
         } else {
             System.out.println("The function SecretFunction() is not an additive function for all prime number under " + limit + ".");
@@ -66,17 +66,17 @@ public class SecretFunction {
     }
  
  
-    private static boolean testSecret(Integer[] primes) {
+    private static boolean isAdditive(Integer[] primes) {
         ArrayList<Integer> passed = new ArrayList<>();
  
         for (Integer x : primes) {
             for (Integer y : primes) {
-                int sumLeft = (x + y);
-                int secretLeft = returnSecretNum(sumLeft); // left side - secret(x+y)
+                int sumOne = (x + y);
+                int secretLeft = returnSecretNum(sumOne); // 1st - secret(x+y)
  
                 int secretX = returnSecretNum(x);
                 int secretY = returnSecretNum(y);
-                int secretRight = (secretX + secretY); // right side - secret(x) + secret(y)
+                int secretRight = (secretX + secretY); // 2nd - secret(x) + secret(y)
  
                 if (secretLeft != secretRight) {
                     return false;
