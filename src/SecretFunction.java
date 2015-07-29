@@ -14,7 +14,7 @@ public class SecretFunction {
     public static void main(String[] args) {
  
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter a single integer value greater than 1: ");
+        System.out.print("Enter a integer value greater than 1: ");
         int limit = 0;
         String input;
  
@@ -32,9 +32,9 @@ public class SecretFunction {
         System.out.println("\nPrimes under " + limit + ": " + Arrays.toString(primes));
  
         if (testSecret(primes)) {
-            System.out.println("The function secret() is an additive function for all prime number under " + limit + ".");
+            System.out.println("The function SecretFunction() is an additive function for all prime number under " + limit + ".");
         } else {
-            System.out.println("The function secret() is not an additive function for all prime number under " + limit + ".");
+            System.out.println("The function SecretFunction() is not an additive function for all prime number under " + limit + ".");
         }
     }
  
