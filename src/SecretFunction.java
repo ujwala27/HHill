@@ -2,16 +2,20 @@ import org.apache.commons.lang.math.NumberUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.Serializable;
+
 /**
 * Ujwala Chintala
 * 2015-07-29
 /**
 
 */
- 
-public class SecretFunction {
+//Implement Serializable to be able to ship objects over http.
+public class SecretFunction implements Serializable{
  
     public static void main(String[] args) {
+    	
+    	final long serialVersionUID = 7526472295622776147L;
  
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a integer value greater than 1: ");
@@ -38,16 +42,16 @@ public class SecretFunction {
         }
     }
  
- 
+ //This function accepts single integer and returns a single integer
     public static int returnSecretNum(int number) {
         return number;
     }
  
- 
+ /* Returns all prime numbers less than given N */
     public static Integer[] returnPrimeNumbers(int limit) {
         int[] intList = new int[limit];
         ArrayList<Integer> primes = new ArrayList<>();
-        Arrays.fill(intList, 1); // initially assume all are primes
+        Arrays.fill(intList, 1); 
         int i = 2;
  
         while (i < limit) {
@@ -56,7 +60,7 @@ public class SecretFunction {
  
                 int j = i;
                 while (j < limit) {
-                    intList[j] = 0; // number fails prime test
+                    intList[j] = 0; 
                     j += i;
                 }
            }
@@ -65,7 +69,7 @@ public class SecretFunction {
         return primes.toArray(new Integer[primes.size()]);
     }
  
- 
+    //checks if the additive function [ secret(x+y) = secret(x) + secret(y) ]
     private static boolean isAdditive(Integer[] primes) {
         ArrayList<Integer> passed = new ArrayList<>();
  
