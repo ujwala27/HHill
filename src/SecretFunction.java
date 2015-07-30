@@ -36,9 +36,9 @@ public class SecretFunction implements Serializable{
         System.out.println("\nPrimes under " + limit + ": " + Arrays.toString(primes));
  
         if (isAdditive(primes)) {
-            System.out.println("The function SecretFunction() is an additive function for all prime number under " + limit + ".");
+            System.out.println("The function is additive function for all prime number under " + limit + ".");
         } else {
-            System.out.println("The function SecretFunction() is not an additive function for all prime number under " + limit + ".");
+            System.out.println("The function not an additive function for all prime number under " + limit + ".");
         }
     }
  
